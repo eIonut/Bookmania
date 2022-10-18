@@ -1,0 +1,157 @@
+.navbar {
+  width: 100%;
+  color: #fff;
+  height: 80px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 80px;
+  height: fit-content;
+  justify-content: center;
+
+  &-left-container {
+    display: flex;
+    margin-left: 120px;
+    width: fit-content;
+  }
+
+  &-form {
+    padding-left: 60px;
+    height: 60px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-search {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 16px;
+    outline: none;
+    border: 1px solid #eee;
+  }
+
+  &-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-family: 'Grandstander', cursive;
+    font-weight: 600;
+    font-size: 32px;
+  }
+
+  &-shopping-cart {
+    height: 50px;
+    margin-right: 60px;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.right-cart-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.cart-icon, .search-icon, .arrow-icon, .cart {
+  color: black;
+}
+
+.cart {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+.cart-icon {
+  font-size: 36px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-number {
+  position: relative;
+  top: -12px;
+  right: -55px;
+  bottom: 10px;
+  color: white;
+  border-radius: 50%;
+  width: 46px;
+  height: 21px;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon {
+  position: relative;
+  right: 35px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 1010px) {
+  .navbar-form {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 810px) {
+  .navbar-form {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .navbar-shopping-cart {
+    margin: auto;
+  }
+
+  .navbar-form {
+    width: 400px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-left-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+}
