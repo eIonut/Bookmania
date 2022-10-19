@@ -1,0 +1,7 @@
+<button [routerLink]="['/payment']">Continue</button>
+<div *ngFor="let item of cartItems">
+<h2>{{item.title}}</h2>
+ <img src={{item.image}} alt="">
+ <p>{{item.price}}</p>
+ <p>Total: {{total | currency}}</p>
+</div>

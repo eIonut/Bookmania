@@ -10,8 +10,8 @@
     </div>
 
     <div class="book-info">
-    <div class="authors" *ngFor="let author of book.authors">
-      <p>{{author}}</p>
+    <div class="authors">
+      <p>{{book.authors}}</p>
     </div>
     <div class="publishers" *ngFor="let publisher of book.publishers">
       <p>{{publisher}}</p>
@@ -21,7 +21,7 @@
     <p>Rating: {{book.rating}}</p>
     <p>{{book.desc}}</p>
     <p>{{book.price}}</p>
-    <button class="book-add-button">Add to cart</button>
+    <button class="book-add-button" (click)="addToCart(book)">Add to cart</button>
   </div>
 </div>
   </div>

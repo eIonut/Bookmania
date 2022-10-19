@@ -1,3 +1,26 @@
-<p>
-  shoppingCart works!
-</p>
+  <div class="shopping-cart" (click)="showCartItems()">
+    <span class="product-number" *ngIf="productNumber >= 1">{{productNumber}}</span>
+    <mat-icon class="cart-icon">shopping_cart</mat-icon>
+    <div class="right-cart-container">
+      <p class="cart">My cart  <mat-icon class="arrow-icon">arrow_drop_down</mat-icon></p>
+    </div>
+
+
+    <div
+      class="no-items-added"
+      *ngIf="openCart && productNumber == 0"
+      >
+      No items added to the cart
+    </div>
+    <div class="cart-items" *ngIf="openCart && productNumber >= 1">
+      <div class="cart-items-description" *ngFor="let item of cartItems; let i = index">
+        <img [routerLink]="['/book', item.isbn13]" class="item-image" src={{item.image}} alt="">
+        <p [routerLink]="['/book', item.isbn13]">{{item.title}}</p>
+        <p>{{item.price}}</p>
+        <span class="deleteItemIcon" (click)="deleteFromCart(item, i)">X</span>
+      </div>
+      <p>TOTAL: {{total | number | currency}}</p>
+      <button [routerLink]="['/shopping-cart']">See the cart</button>
+    </div>
+
+  </div>

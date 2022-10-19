@@ -45,18 +45,6 @@
     text-decoration: none;
   }
 
-  &-shopping-cart {
-    height: 50px;
-    margin-right: 60px;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
 }
 
 .right-cart-container {
