@@ -1,9 +1,17 @@
 <app-navbar></app-navbar>
-<div *ngIf="books$ | async as courses">
+<div class="books-container" *ngIf="books$ | async as courses">
   <div *ngFor="let course of courses.books">
-    {{course.title}}
+    <!-- {{course.title}} -->
+    <app-bookCard
+      class="book"
+      [title]="course.title"
+      [price]="course.price"
+      [image]="course.image"
+      (click)="navigateToBook(course.isbn13)"
+      >
+    </app-bookCard>
+
   </div>
 </div>
 
 
-<app-bookCard></app-bookCard>

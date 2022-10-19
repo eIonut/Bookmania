@@ -1,6 +1,11 @@
 .book-card {
   width: 305px;
   border-radius: 8px;
+  border: 1px solid black;
+}
+
+.book-card:hover {
+  cursor: pointer;
 }
 
 .img-container {
@@ -18,8 +23,7 @@
 }
 
 .book-details {
-  border: 1px solid black;
-  border-top: none;
+  border-top: 1px solid black;
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   padding: 10px;

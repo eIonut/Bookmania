@@ -1,3 +1,27 @@
-<p>
-  book works!
-</p>
+<app-navbar></app-navbar>
+
+<div class="book-container" *ngIf="book$ | async as book">
+  <!-- {{course.title}} -->
+    <p class="book-title">{{book.title}}</p>
+    <p class="book-isbn">Isbn CODE: {{book.isbn13}}</p>
+    <div class="book-inner-container">
+    <div class="book-img-container">
+      <img class="book-img" src={{book.image}} alt="">
+    </div>
+
+    <div class="book-info">
+    <div class="authors" *ngFor="let author of book.authors">
+      <p>{{author}}</p>
+    </div>
+    <div class="publishers" *ngFor="let publisher of book.publishers">
+      <p>{{publisher}}</p>
+    </div>
+    <p>Pages: {{book.pages}}</p>
+    <p>Release year: {{book.year}}</p>
+    <p>Rating: {{book.rating}}</p>
+    <p>{{book.desc}}</p>
+    <p>{{book.price}}</p>
+    <button class="book-add-button">Add to cart</button>
+  </div>
+</div>
+  </div>
