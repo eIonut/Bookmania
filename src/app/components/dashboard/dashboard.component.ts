@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
     }
 
     else {
-      this.books$ = this.httpCallsService.searchBook(this.httpCallsService.getSearchQuery());
+      this.books$ = this.httpCallsService.searchBook('mongo');
     }
   }
 
