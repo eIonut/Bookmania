@@ -9,13 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  public books$: Observable<Book> = this.httpCallsService.getDashboardBooks();
+  public searching = this.httpCallsService.getSearch();
+  public books$!: Observable<Book>;
   constructor(private httpCallsService: HttpCallsService,
               private router: Router
     ) { }
 
   ngOnInit() {
+    if(!this.searching) {
+      this.books$ = this.httpCallsService.getDashboardBooks();
+    }
 
+    else {
+      this.books$ = this.httpCallsService.searchBook(this.httpCallsService.getSearchQuery());
+    }
   }
 
   public navigateToBook(isbn13: string | undefined) {

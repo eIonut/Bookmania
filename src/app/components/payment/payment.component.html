@@ -1,2 +1,46 @@
-<p>Pay</p>
-<!-- Apas pe pay, dupa 2 secunde dispare  tot si apare payment successfull, Deci aceeasi componenta si apoi da redirect la dashboard -->
+<!-- Apas pe pay, dupa 2 secunde dispare  tot si apare payment successfull,
+   Deci aceeasi componenta si apoi da redirect la dashboard -->
+<div class="pay-container" *ngIf="!paymentIsFinished">
+  <form [formGroup]="form" class="pay-form" (ngSubmit)="onSubmit()">
+    <h2>Payment amount: {{paymentTotal | currency}}</h2>
+    <label for="">Name on card</label>
+    <input formControlName="nameOnCard" type="text" mask="S* S* S* S*">
+    <div *ngIf="form?.controls?.['nameOnCard']?.dirty || form?.controls?.['nameOnCard']?.touched">
+      <p *ngIf="form?.controls?.['nameOnCard']?.errors?.['required']">Field must be completed.</p>
+    </div>
+
+    <label for="">Card number</label>
+    <input formControlName="cardNumber" type="text" mask="0000-0000-0000-0000">
+    <div *ngIf="form?.controls?.['cardNumber']?.dirty || form?.controls?.['cardNumber']?.touched">
+      <p *ngIf="form?.controls?.['cardNumber']?.errors?.['required']">Field must be completed.</p>
+    </div>
+
+    <label for="">Expiry date</label>
+    <input formControlName="expiryDate" type="text" mask="M0/00" >
+    <div *ngIf="form?.controls?.['expiryDate']?.dirty || form?.controls?.['expiryDate']?.touched">
+      <p *ngIf="form?.controls?.['expiryDate']?.errors?.['required']">Field must be completed.</p>
+    </div>
+
+    <label for="">Security code</label>
+    <input formControlName="securityCode" type="text" mask="000">
+    <div *ngIf="form?.controls?.['securityCode']?.dirty || form?.controls?.['securityCode']?.touched">
+      <p *ngIf="form?.controls?.['securityCode']?.errors?.['required']">Field must be completed.</p>
+    </div>
+
+    <label for="">ZIP/Postal code</label>
+    <input formControlName="zip_postalCode" type="text" mask="000000">
+    <div *ngIf="form?.controls?.['zip_postalCode']?.dirty || form?.controls?.['zip_postalCode']?.touched">
+      <p *ngIf="form?.controls?.['zip_postalCode']?.errors?.['required']">Field must be completed.</p>
+    </div>
+    <div class="btn-container">
+      <button class="pay-btn" [disabled]="!form.valid">Pay</button>
+    </div>
+    <p *ngIf="isLoading">Loading</p>
+  </form>
+</div>
+
+<div *ngIf="paymentIsFinished">
+  <p>Successfully paid</p>
+  <p *ngIf="secondsUntilRedirect !== 1">Redirect in {{secondsUntilRedirect}} seconds.</p>
+  <p *ngIf="secondsUntilRedirect === 1">Redirect in {{secondsUntilRedirect}} second.</p>
+</div>

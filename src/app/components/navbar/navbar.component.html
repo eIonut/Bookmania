@@ -6,8 +6,8 @@
     >
       Bookmania
     </a>
-    <form class="navbar-form">
-      <input class="navbar-search">
+    <form class="navbar-form" (ngSubmit)="onSubmit(input)">
+      <input class="navbar-search" #input>
       <mat-icon class="search-icon">search</mat-icon>
     </form>
   </div>

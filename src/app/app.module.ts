@@ -12,6 +12,12 @@ import { BookCardComponent } from './components/bookCard/bookCard.component';
 import { ShoppingCartComponent } from './components/shoppingCart/shoppingCart.component';
 import { CartDetailsComponent } from './components/cartDetails/cartDetails.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule} from '@angular/forms'
+import { MatInput, MatInputModule } from '@angular/material/input';
+import { NgxMaskModule} from 'ngx-mask'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,13 @@ import { PaymentComponent } from './components/payment/payment.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatInputModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

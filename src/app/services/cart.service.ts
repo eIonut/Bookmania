@@ -17,4 +17,12 @@ public getCartItems() {
   this.cartItems = JSON.parse(localStorage.getItem('cart') as string);
   return this.cartItems;
 }
+
+public emptyCart() {
+  this.cartItems = [];
+}
+
+public setCart(cart: any) {
+  this.cartItems = cart;
+}
 }

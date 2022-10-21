@@ -32,6 +32,7 @@ export class BookComponent implements OnInit {
   }
 
   public addToCart(book: isbnBook){
+    console.log(book);
     this.cartService.addToCart(book);
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
